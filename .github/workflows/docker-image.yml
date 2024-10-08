@@ -11,10 +11,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-
       - name: Run Docker container
         run: |
           docker exec my-container python3 TTS/server/server.py --model_name tts_models/en/vctk/vits
