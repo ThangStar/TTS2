@@ -17,6 +17,4 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker run --rm -d -p 5002:5002 --name my-container my-image-name:$(date +%s)
-          docker exec my-container python3 TTS/server/server.py --list_models
           docker exec my-container python3 TTS/server/server.py --model_name tts_models/en/vctk/vits
